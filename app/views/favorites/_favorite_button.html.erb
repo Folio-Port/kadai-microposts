@@ -1,0 +1,5 @@
+<% unless current_user.favoriting?(micropost) %>
+  <%= link_to "Favorite", favorites_url(favorite_id: micropost.id), method: :post, class: 'btn btn-primary btn-sm' %>
+<% else %>
+  <%= link_to "Unfavorite", favorite_url(favorite_id: micropost.id), method: :delete, class: 'btn btn-secondary btn-sm' %>
+<% end %>
